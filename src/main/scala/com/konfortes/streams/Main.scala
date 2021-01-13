@@ -17,7 +17,7 @@ object Main extends App {
   import org.apache.kafka.streams.scala.Serdes._
 
   val Logger = LoggerFactory.getLogger(getClass.getSimpleName)
-  Logger.info("Starting!")
+  Logger.info("Starting...")
 
   val conf = pureconfig.loadConfigOrThrow[AppConfig]("streams-starter")
   println(conf)
@@ -25,7 +25,7 @@ object Main extends App {
   val builder = new StreamsBuilder
 
   val stream = builder
-    .stream[String, String](
+    .stream[String, User](
       conf.topology.sourceTopic
     )
     .mapValues(t => t.toUpperCase)
@@ -41,6 +41,7 @@ object Main extends App {
   streams.start
 
   sys.ShutdownHookThread {
+    Logger.info("Shutting down...")
     streams.close(Duration.ofSeconds(10))
   }
 
