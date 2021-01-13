@@ -12,10 +12,10 @@ It contains a simple processing example on a ksql-datagen quickstart data (see [
     ```bash
     kafka-topics --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic users
 
-    kafka-topics --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic users_output
+    kafka-topics --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic users-output
     ```
 
-3. run the app: `sbt run`
+3. Run the app: `sbt run`
 
 4. Produce data into the `users` topic:
 
@@ -23,4 +23,4 @@ It contains a simple processing example on a ksql-datagen quickstart data (see [
     ksql-datagen quickstart='users' topic='users' msgRate=5 iterations=10000 printRows=false
     ```
 
-5. See processed data output in the `users_output` topic
+5. See processed data output in the `users-output` topic
