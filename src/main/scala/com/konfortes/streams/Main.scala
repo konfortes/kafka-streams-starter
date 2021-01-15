@@ -2,6 +2,8 @@ package com.konfortes.streams
 
 import java.time.Duration
 
+import pureconfig._
+import pureconfig.generic.auto._
 import org.apache.kafka.streams.KafkaStreams
 import org.slf4j.LoggerFactory
 

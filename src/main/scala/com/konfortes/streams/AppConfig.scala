@@ -2,7 +2,7 @@ package com.konfortes.streams
 
 import java.util.Properties
 
-case class TopologyConfig(sourceTopic: String, sinkTopic: String)
+case class TopologyConfig(sourceTopic: String, sinkTopic: String, malesByRegionSink: String)
 case class KafkaStreamsConfig(props: Map[String, String]) {
   def toProps: Properties = {
     val p = new Properties()
