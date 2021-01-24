@@ -19,7 +19,7 @@ It contains a simple processing example on a ksql-datagen quickstart data (see [
 
     ```bash
     foreach topic (order-events orders-sum-by-user-1m-window)
-        kafka-topics --delete --bootstrap-server localhost:9092 --topic $topic
+      kafka-topics --delete --bootstrap-server localhost:9092 --topic $topic
     end
     ```
 
