@@ -10,38 +10,25 @@ It contains a simple processing example on a ksql-datagen quickstart data (see [
 2. Create the source and sink topics:
 
     ```bash
-
-    foreach topic (users users-output)
+    foreach topic (order-events orders-sum-by-user-1m-window)
       kafka-topics --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic $topic
     end
-
-    kafka-topics --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --config cleanup.policy=compact --topic males-by-region-output
     ```
 
     (Cleanup)
 
     ```bash
-    foreach topic (users users-output males-by-region-output)
+    foreach topic (order-events orders-sum-by-user-1m-window)
         kafka-topics --delete --bootstrap-server localhost:9092 --topic $topic
     end
     ```
 
 3. Run the app: `sbt run`
 
-4. Produce data into the `users` topic:
+4. See processed data output
 
     ```bash
-    ksql-datagen quickstart='users' topic='users' msgRate=5 iterations=1000 printRows=false
-    ```
-
-5. See processed data output
-
-    ```bash
-    # users-output
-    kafkacat -C -b localhost:9092 -t users-output -f 'Key: %k\nValue: %s\n'
-
-    # males-by-region-output
-    kafkacat -C -b localhost:9092 -s key=c -s value=q -t males-by-region-output -f 'Key: %k\nValue: %s\n'
+    kafkacat -C -b localhost:9092 -t orders-sum-by-user-1m-window -s key=s -s value=q -f 'Key: %k\nHeaders: %h\nValue: %s\n' -o beginning
     ```
 
 ## Topology
