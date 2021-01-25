@@ -7,7 +7,7 @@ import org.apache.kafka.streams.processor.TimestampExtractor
 
 case class Order(
     items: List[String],
-    totalAmount: Float,
+    totalAmount: Long,
     userId: String,
     // status: OrderStatus,
     status: String,

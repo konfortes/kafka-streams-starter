@@ -1,0 +1,9 @@
+1:{"items": ["item1"], "totalAmount": 30, "userId": "111", "status": "created", "createdAt": "2020-01-23T10:00:00.00Z"}
+2:{"items": ["item2"], "totalAmount": 50, "userId": "111", "status": "created", "createdAt": "2020-01-23T12:00:00.00Z"}
+3:{"items": ["item2"], "totalAmount": 50, "userId": "222", "status": "created", "createdAt": "2020-01-23T11:00:00.00Z"}
+4:{"items": ["item0"], "totalAmount": 0, "userId": "none", "status": "created", "createdAt": "2020-01-23T13:00:00.00Z"}
+1:{"items": ["item1"], "totalAmount": 30, "userId": "111", "status": "canceled", "createdAt": "2020-01-23T14:00:00.00Z"}
+5:{"items": ["item1", "item2", "item3"], "totalAmount": 200, "userId": "333", "status": "created", "createdAt": "2020-01-23T16:00:00.00Z"}
+6:{"items": ["item1", "item2"], "totalAmount": 80, "userId": "333", "status": "created", "createdAt": "2020-01-24T11:00:00.00Z"}
+7:{"items": ["item3"], "totalAmount": 120, "userId": "111", "status": "created", "createdAt": "2020-01-24T13:00:00.00Z"}
+8:{"items": ["item3"], "totalAmount": 120, "userId": "444", "status": "created", "createdAt": "2020-01-26T10:00:00.00Z"}
